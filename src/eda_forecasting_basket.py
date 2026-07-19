@@ -2,8 +2,14 @@
 Extension: Exploratory Data Analysis, Risk Forecasting, and Market Basket
 (Association Rule) Analysis
 --------------------------------------------------------------------------
+<<<<<<< HEAD
 Builds on risk_reporting_analysis.py. Adds three components commonly asked
 for in analyst/risk-reporting portfolios:
+=======
+
+  A. Deeper EDA — distributions, outliers, bivariate risk relationships
+  B. Forecasting — monthly order volume & risk-rate trend forecast
+>>>>>>> b3ec67d57e0866c45f98d4f569b20435960cc506
 
   A. Deeper EDA — distributions, outliers, bivariate risk relationships
   B. Forecasting — monthly order volume & risk-rate trend forecast

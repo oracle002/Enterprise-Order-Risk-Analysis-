@@ -3,7 +3,10 @@ E-Commerce Order Risk Data Aggregation & Reporting
 ----------------------------------------------------
 A risk-reporting-oriented analysis of 12,000 synthetic e-commerce orders.
 
+<<<<<<< HEAD
 Framed around the kind of work a Risk Reporting Analyst performs:
+=======
+>>>>>>> b3ec67d57e0866c45f98d4f569b20435960cc506
   1. Aggregate raw transaction-level data into standardized risk indicators
   2. Build a risk scorecard / reporting layer across key risk dimensions
      (fraud, returns, delivery, geography, payment method, channel)
@@ -11,8 +14,11 @@ Framed around the kind of work a Risk Reporting Analyst performs:
      on where risk concentrations exceed expected thresholds
   4. Train a classification model to flag high-risk orders and surface
      the leading risk drivers (feature importance) for reporting narratives
+<<<<<<< HEAD
 
 Author: Risk Analytics Portfolio Project
+=======
+>>>>>>> b3ec67d57e0866c45f98d4f569b20435960cc506
 """
 
 import pandas as pd
