@@ -26,16 +26,65 @@ risk governance).
   monthly trend, appetite breach log, and dimension-level scorecards — structured the way a
   periodic risk report would be packaged for stakeholders.
 
+- Runs a deeper exploratory analysis: distribution and outlier checks (IQR method) on order
+  value, shipping distance, and delivery time; bivariate breakdowns of order value and review
+  score by risk label; and risk-rate comparisons across device type.
+- Forecasts the next 3 months of order volume, fraud rate, and return rate using Holt-Winters
+  exponential smoothing with seasonal decomposition, so the reporting pack isn't just
+  backward-looking.
+- Mines association rules across order attributes (country, payment method, category, channel,
+  device, and risk flags) — the standard adaptation of market-basket / Apriori analysis for
+  fraud-pattern detection when there's no multi-item basket or repeat-customer ID to group
+  transactions by. Surfaces the specific attribute combinations most strongly linked to fraud
+  (`high_risk_ip` → 4.86x lift, `address_mismatch` → 3.91x lift) and to returns
+  (`product_category = Fashion` → ~1.9–2.0x lift, `late_delivery_risk` → 1.88x lift).
+
 ## Repo structure
 ```
-risk_reporting_analysis.py      # end-to-end aggregation, scorecards, model, plots
-risk_reporting_pack.xlsx        # consolidated multi-tab risk report
-risk_appetite_breach_log.csv    # segments exceeding defined risk appetite threshold
-monthly_risk_trend.csv          # monthly fraud/return rate trend
-feature_importance.csv          # top risk drivers from the classification model
-model_classification_report.txt
-plots/                          # risk distribution, trend, scorecard, and model visuals
+data/
+  synthetic_ecommerce_order_risk_dataset.csv   # 12,000-row synthetic source dataset
+notebooks/
+  risk_reporting_analysis.ipynb                # notebook version of the core pipeline, outputs included
+  eda_forecasting_basket.ipynb                 # notebook version of EDA/forecast/basket analysis
+src/
+  risk_reporting_analysis.py      # end-to-end aggregation, scorecards, model, plots
+  eda_forecasting_basket.py       # deeper EDA, 3-month forecast, association-rule mining
+reports/
+  risk_reporting_pack.xlsx        # consolidated multi-tab risk report
+  risk_appetite_breach_log.csv    # segments exceeding defined risk appetite threshold
+  monthly_risk_trend.csv          # monthly fraud/return rate trend
+  feature_importance.csv          # top risk drivers from the classification model
+  model_classification_report.txt
+  eda_numeric_summary.csv         # descriptive statistics for numeric fields
+  eda_outlier_report.csv          # IQR-based outlier counts
+  forecast_next_3_months.csv      # 3-month forward forecast of orders, fraud rate, return rate
+  market_basket_fraud_rules.csv   # association rules ranked by lift, fraud outcome
+  market_basket_return_rules.csv  # association rules ranked by lift, return outcome
+  plots/                          # risk distribution, trend, scorecard, EDA, forecast, and rule visuals
+requirements.txt
 ```
+
+## Setup & how to run
+
+```bash
+git clone https://github.com/<your-username>/ecommerce-order-risk-reporting.git
+cd ecommerce-order-risk-reporting
+python -m venv .venv && source .venv/bin/activate   # optional but recommended
+pip install -r requirements.txt
+
+# Run the pipeline as scripts (writes into reports/)
+cd src
+python risk_reporting_analysis.py
+python eda_forecasting_basket.py
+
+# Or explore interactively (outputs are already saved in the notebooks)
+cd ../notebooks
+jupyter notebook risk_reporting_analysis.ipynb
+```
+
+Both scripts/notebooks read `../data/synthetic_ecommerce_order_risk_dataset.csv` and write results
+into `../reports/` (tables) and `../reports/plots/` (visuals), so they must be run from inside `src/`
+or `notebooks/` respectively — paths are relative to keep the repo portable.
 
 ## Key findings
 - Enterprise-wide fraud rate: **3.72%**, return rate: **9.27%**, combined high-risk rate: **12.65%**.
@@ -44,3 +93,8 @@ plots/                          # risk distribution, trend, scorecard, and model
   double that of Marketplace or Direct traffic — a candidate finding for channel-level risk review.
 - Review score, order history depth, and shipping distance are the leading quantitative
   predictors of order risk classification.
+- 3-month forward forecast (Jan–Mar 2026) projects order volume holding steady with fraud and
+  return rates staying within recent historical ranges — no material trend shift detected.
+- `high_risk_ip` and `address_mismatch` are the strongest individual fraud signals (4.86x and
+  3.91x lift respectively), far outweighing channel- or category-level effects — a finding that
+  supports prioritizing those two flags in any real-time fraud-scoring rule.

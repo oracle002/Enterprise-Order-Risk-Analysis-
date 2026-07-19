@@ -1,0 +1,148 @@
+antecedents,consequents,support,confidence,lift
+"payment_method_Debit Card, product_category_Fashion",is_returned,0.005833333333333334,0.18421052631578946,1.9878833775085194
+product_category_Fashion,"is_returned, payment_method_Credit Card",0.009166666666666667,0.06462984723854288,1.9535470198048228
+product_category_Fashion,"is_returned, payment_method_Debit Card",0.005833333333333334,0.041128084606345476,1.9507391908148053
+"payment_method_Credit Card, product_category_Fashion",is_returned,0.009166666666666667,0.17886178861788618,1.9301631865239517
+product_category_Fashion,"device_type_Desktop, is_returned",0.007833333333333333,0.05522914218566392,1.8935705892227628
+late_delivery_risk,"device_type_Mobile, is_returned",0.006416666666666667,0.10694444444444445,1.8844836025452767
+"device_type_Desktop, product_category_Fashion",is_returned,0.007833333333333333,0.17184643510054845,1.8544579327397317
+"product_category_Fashion, traffic_source_Organic Search",is_returned,0.005833333333333334,0.1715686274509804,1.8514600084638173
+product_category_Fashion,"is_returned, traffic_source_Paid Ads",0.004916666666666666,0.03466509988249118,1.8165117842353458
+"device_type_Mobile, late_delivery_risk",is_returned,0.006416666666666667,0.16775599128540306,1.810316452720177
+"product_category_Fashion, traffic_source_Social Media",is_returned,0.004,0.16438356164383564,1.7739233270917516
+product_category_Fashion,is_returned,0.023,0.16216216216216214,1.74995139023916
+product_category_Fashion,"is_returned, traffic_source_Organic Search",0.005833333333333334,0.041128084606345476,1.7439470504457444
+late_delivery_risk,is_returned,0.009666666666666667,0.16111111111111112,1.7386091127098324
+"product_category_Fashion, traffic_source_Paid Ads",is_returned,0.004916666666666666,0.16076294277929154,1.734851900495952
+product_category_Fashion,"device_type_Mobile, is_returned",0.013833333333333333,0.09753231492361926,1.7186310999756698
+"device_type_Mobile, product_category_Fashion",is_returned,0.013833333333333333,0.15885167464114833,1.7142267047605935
+product_category_Fashion,"is_returned, traffic_source_Social Media",0.004,0.0282021151586369,1.6589479505080527
+"country_Netherlands, product_category_Fashion",is_returned,0.00575,0.14935064935064934,1.6116976548631226
+product_category_Fashion,"country_Netherlands, is_returned",0.00575,0.040540540540540536,1.6108824055843922
+"payment_method_Credit Card, product_category_Electronics",is_returned,0.006833333333333334,0.12557427258805512,1.3551180495113864
+"country_Belgium, payment_method_Credit Card",is_returned,0.007166666666666667,0.12268188302425108,1.3239052124919182
+country_Belgium,"is_returned, payment_method_Credit Card",0.007166666666666667,0.043654822335025385,1.3195412292702888
+product_category_Electronics,"device_type_Mobile, is_returned",0.0125,0.07470119521912351,1.3163206206012952
+payment_method_Credit Card,"country_Belgium, is_returned",0.007166666666666667,0.021586345381526102,1.3016891687352425
+"device_type_Mobile, product_category_Electronics",is_returned,0.0125,0.11857707509881422,1.2796087240879233
+product_category_Electronics,"is_returned, traffic_source_Paid Ads",0.004083333333333333,0.024402390438247008,1.2787278832269173
+product_category_Electronics,is_returned,0.019166666666666665,0.1145418326693227,1.2360629424747056
+product_category_Electronics,"is_returned, payment_method_Credit Card",0.006833333333333334,0.04083665338645418,1.2343572812026453
+product_category_Electronics,"is_returned, payment_method_Debit Card",0.004333333333333333,0.02589641434262948,1.2282884273183943
+product_category_Electronics,"country_Netherlands, is_returned",0.005166666666666667,0.030876494023904383,1.2268805572412338
+"payment_method_Credit Card, traffic_source_Marketplace",is_returned,0.004666666666666667,0.11336032388663969,1.2233128476975508
+payment_method_Credit Card,"is_returned, product_category_Fashion",0.009166666666666667,0.027610441767068273,1.2004539898725337
+"product_category_Electronics, traffic_source_Paid Ads",is_returned,0.004083333333333333,0.11085972850678731,1.1963280054689278
+"product_category_Electronics, traffic_source_Organic Search",is_returned,0.004166666666666667,0.10989010989010989,1.1858644952170132
+"country_Netherlands, product_category_Electronics",is_returned,0.005166666666666667,0.10973451327433628,1.1841853950467944
+"payment_method_Debit Card, product_category_Electronics",is_returned,0.004333333333333333,0.10947368421052632,1.1813706929193488
+"device_type_Desktop, product_category_Electronics",is_returned,0.0055,0.10945273631840795,1.1811446365295823
+payment_method_Credit Card,"is_returned, traffic_source_Marketplace",0.004666666666666667,0.014056224899598393,1.1713520749665327
+payment_method_Credit Card,"is_returned, traffic_source_Social Media",0.006583333333333333,0.019829317269076305,1.1664304275927238
+country_Belgium,"device_type_Mobile, is_returned",0.010833333333333334,0.06598984771573604,1.1628166998367584
+"device_type_Mobile, traffic_source_Email",is_returned,0.004666666666666667,0.10748560460652593,1.1599165964733014
+"country_Belgium, device_type_Mobile",is_returned,0.010833333333333334,0.10734929810074319,1.1584456629576603
+payment_method_Debit Card,"is_returned, product_category_Home & Kitchen",0.004416666666666667,0.019687964338781574,1.1358440964681678
+device_type_Desktop,"is_returned, product_category_Home & Kitchen",0.00625,0.019669551534225022,1.1347818192822128
+traffic_source_Paid Ads,"is_returned, product_category_Home & Kitchen",0.004333333333333333,0.019637462235649546,1.1329305135951662
+device_type_Mobile,"country_Spain, is_returned",0.004916666666666666,0.008022844710361708,1.1326369002863588
+payment_method_Debit Card,"is_returned, product_category_Fashion",0.005833333333333334,0.02600297176820208,1.1305639899218296
+product_category_Electronics,"device_type_Desktop, is_returned",0.0055,0.03286852589641434,1.1269208878770631
+"payment_method_Debit Card, traffic_source_Organic Search",is_returned,0.005333333333333333,0.10440456769983686,1.1266679967608295
+payment_method_Credit Card,"is_returned, traffic_source_Paid Ads",0.007083333333333333,0.021335341365461846,1.118009154522018
+"payment_method_Credit Card, traffic_source_Social Media",is_returned,0.006583333333333333,0.10326797385620914,1.1144025955706023
+"device_type_Mobile, payment_method_Credit Card",is_returned,0.020666666666666667,0.10303282093892813,1.1118649741610949
+country_Turkey,"device_type_Mobile, is_returned",0.004416666666666667,0.0630952380952381,1.1118103629116844
+traffic_source_Marketplace,"is_returned, payment_method_Credit Card",0.004666666666666667,0.036601307189542485,1.1063367412456167
+product_category_Home & Kitchen,"is_returned, traffic_source_Paid Ads",0.004333333333333333,0.02106969205834684,1.1040886668129348
+traffic_source_Direct,"country_Netherlands, is_returned",0.004083333333333333,0.027777777777777776,1.1037527593818983
+"country_Belgium, traffic_source_Organic Search",is_returned,0.004,0.10191082802547771,1.099757136965587
+"country_Germany, payment_method_Credit Card",is_returned,0.004583333333333333,0.10185185185185186,1.0991207034372503
+device_type_Desktop,"is_returned, payment_method_PayPal",0.0055,0.01730920535011802,1.0989971650868584
+traffic_source_Organic Search,"is_returned, payment_method_PayPal",0.00425,0.01728813559322034,1.0976594027441486
+traffic_source_Email,"device_type_Mobile, is_returned",0.004666666666666667,0.06229143492769744,1.0976464304440077
+payment_method_Credit Card,"device_type_Mobile, is_returned",0.020666666666666667,0.06224899598393574,1.0968986076464446
+country_Italy,is_returned,0.00775,0.10163934426229508,1.0968274560679325
+"country_Turkey, device_type_Mobile",is_returned,0.004416666666666667,0.10153256704980844,1.0956751839907386
+country_Belgium,is_returned,0.016583333333333332,0.10101522842639593,1.0900923930906037
+"country_Netherlands, traffic_source_Direct",is_returned,0.004083333333333333,0.10061601642710472,1.0857843499327848
+device_type_Mobile,"is_returned, late_delivery_risk",0.006416666666666667,0.010470492249116127,1.0831543705982198
+payment_method_Credit Card,"country_Germany, is_returned",0.004583333333333333,0.013805220883534136,1.0827624222379715
+traffic_source_Social Media,"is_returned, payment_method_Credit Card",0.006583333333333333,0.03576278859212313,1.0809910909457874
+traffic_source_Email,is_returned,0.0075,0.10011123470522802,1.0803370651643311
+traffic_source_Marketplace,"device_type_Desktop, is_returned",0.004,0.03137254901960784,1.0756302521008403
+payment_method_Credit Card,is_returned,0.03308333333333333,0.09964859437751003,1.0753445436421947
+payment_method_Credit Card,"is_returned, product_category_Electronics",0.006833333333333334,0.020582329317269075,1.0738606600314302
+device_type_Desktop,"country_Netherlands, is_returned",0.008583333333333333,0.02701285077366903,1.0733583088875112
+device_type_Desktop,"is_returned, product_category_Fashion",0.007833333333333333,0.024652504589562026,1.0718480256331315
+country_Netherlands,"is_returned, traffic_source_Direct",0.004083333333333333,0.01446280991735537,1.071319253137435
+traffic_source_Organic Search,"device_type_Desktop, is_returned",0.007666666666666666,0.031186440677966103,1.0692493946731234
+device_type_Mobile,"is_returned, product_category_Sports",0.005833333333333334,0.009518629317378298,1.0675098299863512
+device_type_Mobile,"country_Belgium, is_returned",0.010833333333333334,0.017677454446559694,1.0659771525563635
+device_type_Mobile,"is_returned, product_category_Electronics",0.0125,0.020397062822953494,1.0641945820671388
+"payment_method_Credit Card, traffic_source_Organic Search",is_returned,0.008083333333333333,0.09827760891590678,1.0605497365025913
+country_Germany,"device_type_Desktop, is_returned",0.00425,0.03090909090909091,1.0597402597402599
+product_category_Electronics,"is_returned, traffic_source_Organic Search",0.004166666666666667,0.0249003984063745,1.0558472822490954
+device_type_Mobile,"country_Turkey, is_returned",0.004416666666666667,0.007206962197443568,1.0546773947478392
+country_Turkey,is_returned,0.006833333333333334,0.09761904761904762,1.0534429599177801
+"payment_method_Debit Card, product_category_Home & Kitchen",is_returned,0.004416666666666667,0.09760589318600368,1.0533010056043564
+country_Poland,is_returned,0.007,0.0974477958236659,1.0515949189604235
+payment_method_Credit Card,"device_type_Desktop, is_returned",0.010166666666666666,0.030622489959839353,1.0499139414802063
+"payment_method_Credit Card, traffic_source_Paid Ads",is_returned,0.007083333333333333,0.09725400457665903,1.049503646510709
+country_Netherlands,"is_returned, payment_method_PayPal",0.004666666666666667,0.01652892561983471,1.0494555949101403
+device_type_Tablet,is_returned,0.00675,0.09723889555822329,1.0493405995491722
+device_type_Desktop,"country_Germany, is_returned",0.00425,0.013375295043273016,1.0490427484920013
+device_type_Desktop,"is_returned, traffic_source_Marketplace",0.004,0.012588512981904014,1.049042748492001
+payment_method_Debit Card,"country_Netherlands, is_returned",0.005916666666666666,0.02637444279346211,1.0479911043759778
+"device_type_Desktop, traffic_source_Marketplace",is_returned,0.004,0.0967741935483871,1.0443258296588536
+traffic_source_Social Media,"country_Netherlands, is_returned",0.004833333333333334,0.02625622453598914,1.043293690171754
+country_Netherlands,"device_type_Desktop, is_returned",0.008583333333333333,0.03040141676505313,1.0423342890875358
+product_category_Home & Kitchen,"device_type_Desktop, is_returned",0.00625,0.030388978930307942,1.0419078490391294
+traffic_source_Organic Search,is_returned,0.023583333333333335,0.09593220338983052,1.0352396049262287
+country_Belgium,"is_returned, traffic_source_Organic Search",0.004,0.02436548223350254,1.0331653243888004
+payment_method_Credit Card,"is_returned, traffic_source_Organic Search",0.008083333333333333,0.02434738955823293,1.032398143811997
+traffic_source_Organic Search,"is_returned, product_category_Fashion",0.005833333333333334,0.023728813559322035,1.0316875460574797
+traffic_source_Direct,"device_type_Desktop, is_returned",0.004416666666666667,0.030045351473922906,1.0301263362487854
+device_type_Desktop,"is_returned, traffic_source_Direct",0.004416666666666667,0.013899816417519015,1.0296160309273343
+payment_method_Klarna,is_returned,0.012,0.09536423841059603,1.029110486445281
+traffic_source_Organic Search,"is_returned, payment_method_Debit Card",0.005333333333333333,0.02169491525423729,1.0290078381456422
+"device_type_Desktop, traffic_source_Organic Search",is_returned,0.007666666666666666,0.09533678756476684,1.028814254296045
+payment_method_Credit Card,"is_returned, product_category_Home & Kitchen",0.005916666666666666,0.01782128514056225,1.0281510658016682
+device_type_Mobile,"is_returned, traffic_source_Paid Ads",0.012,0.019581180310035355,1.0260880511808919
+"country_Germany, device_type_Desktop",is_returned,0.00425,0.09497206703910616,1.0248784212853184
+"device_type_Mobile, traffic_source_Organic Search",is_returned,0.014083333333333333,0.09483726150392817,1.023423685294189
+"device_type_Desktop, traffic_source_Direct",is_returned,0.004416666666666667,0.09481216457960645,1.0231528551756093
+device_type_Desktop,"is_returned, traffic_source_Organic Search",0.007666666666666666,0.024127983215316024,1.0230946946423756
+payment_method_Debit Card,"device_type_Mobile, is_returned",0.013,0.05794947994056463,1.0211362104064252
+"device_type_Mobile, payment_method_Klarna",is_returned,0.007166666666666667,0.09460946094609461,1.0209654058931075
+"country_Germany, device_type_Mobile",is_returned,0.007833333333333333,0.09456740442655935,1.020511558559993
+device_type_Mobile,"is_returned, payment_method_Credit Card",0.020666666666666667,0.03372314386728311,1.019339361227701
+product_category_Home & Kitchen,"is_returned, payment_method_Debit Card",0.004416666666666667,0.02147487844408428,1.0185713096008353
+"device_type_Mobile, payment_method_Debit Card",is_returned,0.013,0.09431680773881498,1.0178072777569962
+traffic_source_Organic Search,"is_returned, product_category_Home & Kitchen",0.004333333333333333,0.017627118644067796,1.0169491525423728
+"device_type_Desktop, payment_method_PayPal",is_returned,0.0055,0.094151212553495,1.0160202793542625
+device_type_Mobile,"is_returned, traffic_source_Social Media",0.010583333333333333,0.017269513190100626,1.0158537170647426
+traffic_source_Marketplace,is_returned,0.012,0.09411764705882353,1.0156580617858655
+device_type_Mobile,"is_returned, traffic_source_Email",0.004666666666666667,0.007614903453902639,1.0153204605203519
+device_type_Mobile,"is_returned, product_category_Garden",0.004666666666666667,0.007614903453902639,1.0153204605203519
+"country_Poland, device_type_Mobile",is_returned,0.004083333333333333,0.09404990403071016,1.0149270219141384
+payment_method_Debit Card,is_returned,0.021083333333333332,0.09398216939078752,1.0141960725624553
+"country_Netherlands, payment_method_Debit Card",is_returned,0.005916666666666666,0.09391534391534391,1.0134749343382436
+traffic_source_Social Media,"device_type_Mobile, is_returned",0.010583333333333333,0.05749207786328656,1.0130762619081333
+"device_type_Desktop, payment_method_Credit Card",is_returned,0.010166666666666666,0.09370199692780337,1.0111726287173026
+"device_type_Desktop, traffic_source_Social Media",is_returned,0.005083333333333333,0.09355828220858896,1.009621750452399
+traffic_source_Organic Search,"device_type_Mobile, is_returned",0.014083333333333333,0.05728813559322034,1.0094825655193012
+payment_method_Debit Card,"is_returned, traffic_source_Organic Search",0.005333333333333333,0.0237741456166419,1.0080909802109639
+payment_method_Debit Card,"is_returned, product_category_Electronics",0.004333333333333333,0.019316493313521546,1.0078170424446025
+country_Germany,"is_returned, payment_method_Credit Card",0.004583333333333333,0.03333333333333333,1.0075566750629723
+payment_method_Credit Card,"country_Netherlands, is_returned",0.008416666666666666,0.025351405622489956,1.0073406207611904
+country_Netherlands,"is_returned, traffic_source_Social Media",0.004833333333333334,0.017119244391971666,1.0070143759983332
+device_type_Mobile,"is_returned, payment_method_Debit Card",0.013,0.021212945335871633,1.0061476048634768
+country_Netherlands,"is_returned, product_category_Home & Kitchen",0.004916666666666666,0.01741440377804014,1.0046771410407773
+"device_type_Mobile, traffic_source_Marketplace",is_returned,0.007166666666666667,0.09307359307359307,1.0043912921610765
+payment_method_PayPal,"device_type_Desktop, is_returned",0.0055,0.02929427430093209,1.0043751188891001
+country_Germany,"device_type_Mobile, is_returned",0.007833333333333333,0.05696969696969696,1.003871312241356
+payment_method_Klarna,"device_type_Mobile, is_returned",0.007166666666666667,0.05695364238410596,1.0035884120547305
+device_type_Mobile,"country_Germany, is_returned",0.007833333333333333,0.012782159369050855,1.002522303454969
+country_Poland,"device_type_Mobile, is_returned",0.004083333333333333,0.0568445475638051,1.0016660363666097
+country_Germany,is_returned,0.01275,0.09272727272727271,1.000654022236756

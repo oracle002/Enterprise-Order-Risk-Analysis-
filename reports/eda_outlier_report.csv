@@ -1,0 +1,4 @@
+,lower_bound,upper_bound,n_outliers,pct_outliers
+order_value_eur,-47.38,149.95,742.0,6.18
+shipping_distance_km,-377.59,1258.91,358.0,2.98
+delivery_days_estimated,0.0,8.0,1.0,0.01
