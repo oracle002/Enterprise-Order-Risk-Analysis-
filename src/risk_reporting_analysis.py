@@ -3,7 +3,7 @@ E-Commerce Order Risk Data Aggregation & Reporting
 ----------------------------------------------------
 A risk-reporting-oriented analysis of 12,000 synthetic e-commerce orders.
 
-
+Framed around the kind of work a Risk Reporting Analyst performs:
   1. Aggregate raw transaction-level data into standardized risk indicators
   2. Build a risk scorecard / reporting layer across key risk dimensions
      (fraud, returns, delivery, geography, payment method, channel)
@@ -12,6 +12,7 @@ A risk-reporting-oriented analysis of 12,000 synthetic e-commerce orders.
   4. Train a classification model to flag high-risk orders and surface
      the leading risk drivers (feature importance) for reporting narratives
 
+Author: Risk Analytics Portfolio Project
 """
 
 import pandas as pd
@@ -112,36 +113,36 @@ ax.set_title("Order Risk Label Distribution")
 ax.set_xlabel("Risk Label")
 ax.set_ylabel("Number of Orders")
 plt.xticks(rotation=0)
-plt.tight_layout()
-plt.savefig(f"{PLOT_DIR}/risk_label_distribution.png", dpi=150)
-plt.close()
+fig.tight_layout()
+fig.savefig(f"{PLOT_DIR}/risk_label_distribution.png", dpi=150)
+plt.close(fig)
 
 fig, ax = plt.subplots(figsize=(9, 5))
 monthly_trend.plot(x="month", y=["fraud_rate_pct", "return_rate_pct"], ax=ax, marker="o")
 ax.set_title("Monthly Fraud & Return Rate Trend")
 ax.set_ylabel("Rate (%)")
 plt.xticks(rotation=90)
-plt.tight_layout()
-plt.savefig(f"{PLOT_DIR}/monthly_risk_trend.png", dpi=150)
-plt.close()
+fig.tight_layout()
+fig.savefig(f"{PLOT_DIR}/monthly_risk_trend.png", dpi=150)
+plt.close(fig)
 
 fig, ax = plt.subplots(figsize=(7, 5))
 sc = scorecards["payment_method"].sort_values("fraud_rate_pct")
 ax.barh(sc.index, sc["fraud_rate_pct"], color="#C62828")
 ax.set_title("Fraud Rate (%) by Payment Method")
 ax.set_xlabel("Fraud Rate (%)")
-plt.tight_layout()
-plt.savefig(f"{PLOT_DIR}/fraud_by_payment_method.png", dpi=150)
-plt.close()
+fig.tight_layout()
+fig.savefig(f"{PLOT_DIR}/fraud_by_payment_method.png", dpi=150)
+plt.close(fig)
 
 fig, ax = plt.subplots(figsize=(7, 5))
 sc2 = scorecards["country"].sort_values("return_rate_pct")
 ax.barh(sc2.index, sc2["return_rate_pct"], color="#F9A825")
 ax.set_title("Return Rate (%) by Country")
 ax.set_xlabel("Return Rate (%)")
-plt.tight_layout()
-plt.savefig(f"{PLOT_DIR}/return_rate_by_country.png", dpi=150)
-plt.close()
+fig.tight_layout()
+fig.savefig(f"{PLOT_DIR}/return_rate_by_country.png", dpi=150)
+plt.close(fig)
 
 corr_cols = ["customer_age_days", "previous_orders", "avg_order_value_eur", "order_value_eur",
              "discount_rate", "shipping_distance_km", "delivery_days_estimated",
@@ -150,9 +151,9 @@ corr_cols = ["customer_age_days", "previous_orders", "avg_order_value_eur", "ord
 fig, ax = plt.subplots(figsize=(11, 9))
 sns.heatmap(df[corr_cols].corr(), cmap="RdBu_r", center=0, annot=False, ax=ax)
 ax.set_title("Correlation Matrix of Risk-Relevant Features")
-plt.tight_layout()
-plt.savefig(f"{PLOT_DIR}/correlation_heatmap.png", dpi=150)
-plt.close()
+fig.tight_layout()
+fig.savefig(f"{PLOT_DIR}/correlation_heatmap.png", dpi=150)
+plt.close(fig)
 
 # ---------------------------------------------------------------------------
 # 4. PREDICTIVE RISK CLASSIFICATION MODEL
@@ -197,9 +198,9 @@ sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=clf.classes_, yti
 ax.set_title("Risk Label Confusion Matrix")
 ax.set_xlabel("Predicted")
 ax.set_ylabel("Actual")
-plt.tight_layout()
-plt.savefig(f"{PLOT_DIR}/confusion_matrix.png", dpi=150)
-plt.close()
+fig.tight_layout()
+fig.savefig(f"{PLOT_DIR}/confusion_matrix.png", dpi=150)
+plt.close(fig)
 
 # Fraud-only binary AUC (secondary target)
 y_fraud = model_df["is_fraud"]
@@ -223,8 +224,8 @@ importances.to_csv("../reports/feature_importance.csv")
 fig, ax = plt.subplots(figsize=(8, 6))
 importances.head(10).sort_values().plot(kind="barh", color="#1565C0", ax=ax)
 ax.set_title("Top 10 Risk Drivers (Feature Importance)")
-plt.tight_layout()
-plt.savefig(f"{PLOT_DIR}/feature_importance.png", dpi=150)
-plt.close()
+fig.tight_layout()
+fig.savefig(f"{PLOT_DIR}/feature_importance.png", dpi=150)
+plt.close(fig)
 
 print("\nDone. Reporting pack, breach log, and plots saved.")

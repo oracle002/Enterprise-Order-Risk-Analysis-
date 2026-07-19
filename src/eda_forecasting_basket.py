@@ -2,8 +2,20 @@
 Extension: Exploratory Data Analysis, Risk Forecasting, and Market Basket
 (Association Rule) Analysis
 --------------------------------------------------------------------------
-Builds on risk_reporting_analysis.py.
+Builds on risk_reporting_analysis.py. Adds three components commonly asked
+for in analyst/risk-reporting portfolios:
 
+  A. Deeper EDA — distributions, outliers, bivariate risk relationships
+  B. Forecasting — monthly order volume & risk-rate trend forecast
+  C. Market Basket / Association Rule Mining — adapted for this dataset,
+     since each row is a single-product order (no multi-item basket or
+     customer ID exists to group repeat purchases). Instead of classic
+     "items bought together", this treats each order's categorical
+     attributes (country, payment method, category, channel, device,
+     risk flags) as a transaction "basket" and mines which COMBINATIONS
+     of attributes co-occur most strongly with fraud/return outcomes —
+     the standard adaptation of Apriori/association-rule mining used in
+     fraud-pattern detection when no item-level basket exists.
 """
 
 import pandas as pd
@@ -42,9 +54,9 @@ dist_cols = ["order_value_eur", "discount_rate", "delivery_days_estimated",
 for ax, col in zip(axes.flat, dist_cols):
     sns.histplot(df[col], kde=True, ax=ax, color="#1565C0")
     ax.set_title(col)
-plt.tight_layout()
-plt.savefig(f"{PLOT_DIR}/eda_distributions.png", dpi=150)
-plt.close()
+fig.tight_layout()
+fig.savefig(f"{PLOT_DIR}/eda_distributions.png", dpi=150)
+plt.close(fig)
 
 # --- Outlier detection (IQR method) ---
 outlier_report = {}
@@ -66,9 +78,9 @@ sns.boxplot(data=df, x="risk_label", y="order_value_eur", ax=axes[0], palette="S
 axes[0].set_title("Order Value by Risk Label")
 sns.boxplot(data=df, x="risk_label", y="review_score", ax=axes[1], palette="Set2")
 axes[1].set_title("Review Score by Risk Label")
-plt.tight_layout()
-plt.savefig(f"{PLOT_DIR}/eda_boxplots_by_risk.png", dpi=150)
-plt.close()
+fig.tight_layout()
+fig.savefig(f"{PLOT_DIR}/eda_boxplots_by_risk.png", dpi=150)
+plt.close(fig)
 
 # --- Categorical order volume breakdown ---
 fig, axes = plt.subplots(2, 2, figsize=(13, 9))
@@ -76,9 +88,9 @@ for ax, col in zip(axes.flat, ["country", "device_type", "traffic_source", "paym
     df[col].value_counts().plot(kind="bar", ax=ax, color="#455A64")
     ax.set_title(f"Orders by {col}")
     ax.tick_params(axis='x', rotation=45)
-plt.tight_layout()
-plt.savefig(f"{PLOT_DIR}/eda_categorical_breakdown.png", dpi=150)
-plt.close()
+fig.tight_layout()
+fig.savefig(f"{PLOT_DIR}/eda_categorical_breakdown.png", dpi=150)
+plt.close(fig)
 
 # --- Risk rate by device type (bivariate categorical vs risk) ---
 device_risk = df.groupby("device_type")[["is_fraud", "is_returned"]].mean() * 100
@@ -102,9 +114,9 @@ monthly.set_index(pd.PeriodIndex(monthly["month"], freq="M").to_timestamp(), inp
 decomp = seasonal_decompose(monthly["orders"], model="additive", period=12)
 fig = decomp.plot()
 fig.set_size_inches(10, 8)
-plt.tight_layout()
-plt.savefig(f"{PLOT_DIR}/forecast_seasonal_decomposition.png", dpi=150)
-plt.close()
+fig.tight_layout()
+fig.savefig(f"{PLOT_DIR}/forecast_seasonal_decomposition.png", dpi=150)
+plt.close(fig)
 
 # Holt-Winters forecast: order volume (trend + yearly seasonality), 3-month horizon
 hw_orders = ExponentialSmoothing(
@@ -140,9 +152,9 @@ axes[1].plot(monthly.index, monthly["return_rate"] * 100, label="Return Rate Act
 axes[1].plot(return_forecast.index, return_forecast.values * 100, label="Return Rate Forecast", marker="o", linestyle="--", color="#F9A825", alpha=0.5)
 axes[1].set_title("Monthly Fraud & Return Rate — Actual vs. 3-Month Forecast")
 axes[1].legend()
-plt.tight_layout()
-plt.savefig(f"{PLOT_DIR}/forecast_orders_and_risk_rates.png", dpi=150)
-plt.close()
+fig.tight_layout()
+fig.savefig(f"{PLOT_DIR}/forecast_orders_and_risk_rates.png", dpi=150)
+plt.close(fig)
 
 # ===========================================================================
 # C. MARKET BASKET / ASSOCIATION RULE MINING (attribute-based, fraud-pattern focus)
@@ -203,8 +215,8 @@ fig, ax = plt.subplots(figsize=(9, 6))
 ax.barh(top_fraud["antecedents"], top_fraud["lift"], color="#C62828")
 ax.set_xlabel("Lift")
 ax.set_title("Top Attribute Combinations Associated with Fraud (Lift)")
-plt.tight_layout()
-plt.savefig(f"{PLOT_DIR}/market_basket_fraud_rules.png", dpi=150)
-plt.close()
+fig.tight_layout()
+fig.savefig(f"{PLOT_DIR}/market_basket_fraud_rules.png", dpi=150)
+plt.close(fig)
 
 print("\nDone. EDA, forecast, and market-basket outputs saved.")

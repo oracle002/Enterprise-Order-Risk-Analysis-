@@ -7,6 +7,14 @@ risk governance).
 
 **Python, Pandas, NumPy, scikit-learn, Matplotlib/Seaborn, Excel Reporting**
 
+## About Dataset
+
+[E-Commerce Order Risk Classification Dataset](https://www.kaggle.com/datasets/emirhanakku/e-commerce-order-risk-classification-dataset) (Kaggle) — a synthetic dataset for return prediction, fraud detection, and multi-class order risk classification.
+
+This dataset is a fully synthetic e-commerce order risk and return prediction dataset created for machine learning, data analysis, and portfolio projects. It contains 12,000 synthetic online order records with 23 features related to customer behavior, order details, payment method, product category, delivery risk, suspicious activity indicators, customer support interactions, and review scores.
+
+All data is artificially generated and does not contain any real customer, company, payment, address, or personal information.
+
 ## What this project does
 
 - Ingests and validates 12,000 raw order-level records (data quality checks: duplicates, nulls,
