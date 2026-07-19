@@ -2,20 +2,8 @@
 Extension: Exploratory Data Analysis, Risk Forecasting, and Market Basket
 (Association Rule) Analysis
 --------------------------------------------------------------------------
-Builds on risk_reporting_analysis.py. Adds three components commonly asked
-for in analyst/risk-reporting portfolios:
+Builds on risk_reporting_analysis.py.
 
-  A. Deeper EDA — distributions, outliers, bivariate risk relationships
-  B. Forecasting — monthly order volume & risk-rate trend forecast
-  C. Market Basket / Association Rule Mining — adapted for this dataset,
-     since each row is a single-product order (no multi-item basket or
-     customer ID exists to group repeat purchases). Instead of classic
-     "items bought together", this treats each order's categorical
-     attributes (country, payment method, category, channel, device,
-     risk flags) as a transaction "basket" and mines which COMBINATIONS
-     of attributes co-occur most strongly with fraud/return outcomes —
-     the standard adaptation of Apriori/association-rule mining used in
-     fraud-pattern detection when no item-level basket exists.
 """
 
 import pandas as pd
